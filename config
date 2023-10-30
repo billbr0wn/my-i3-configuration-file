@@ -1,0 +1,212 @@
+# Default config for sway
+# Copy this to ~/.config/sway/config and edit it to your liking.
+
+#exec ~/python/t-gtk-28.py && sway '[app_id="~/python/t-#gtk-28.py"]' move container to workspace 3
+
+#exec swaymsg "workspace 3; python3 ~/python/t-gtk-28.py;"
+
+# Emojis and characters for the status bar
+# 💎 💻 💡 🔌 ⚡ 📁 \|  🐧
+#🔈 🔊 🎧 🎶 🎵 🎤
+# Electricity: ⚡ ↯ ⭍ 🔌
+# Misc: 🐧 💎 💻 💡 ⭐ 📁 ↑ ↓ ✉ ✅ ❎
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Font
+#font pango:inconsolata, Black 20
+font pango:Ubuntu, Bold 18
+
+# Home row direction keys, like vim
+#set $left h
+#set $down j
+#set $up k
+#set $right l
+
+###Your preferred terminal emulator
+set $term kitty
+###browser
+set $browser firefox
+###file manager
+set $file-manager pcmanfm
+
+
+
+# Your preferred application launcher
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+set $rofi rofi -show drun 'inconsolata black 18'
+
+#exec_always -no-startup-id "sh -c 'exec </bin/polybar>' "
+exec --no-startup-id polybar --disable-wm-check
+
+
+#---------------------------------------
+# Default wallpaper
+exec once nitrogen --restore
+#----------------------------------------------
+
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Ky bindings
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $rofi
+
+    ###bindsym Control+Space
+    ###bindsym $mod+m exec $menu
+    # start browser
+    bindsym $mod+b exec $browser
+    
+    # start file-manager
+    bindsym $mod+p exec $file-manager
+
+
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    #floating_modifier $mod normal
+
+    # Reload the configuration file
+    #bindsym $mod+c reload
+    bindsym $mod+c restart
+    
+
+
+# Moving around:
+#
+    # Move your focus around
+    bindsym Control+left focus left
+    bindsym Control+down focus down
+    bindsym Control+up focus up
+    bindsym Control+right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym Control+Shift+left move left
+    bindsym Control+Shift+down move down
+    bindsym Control+Shift+up move up
+    bindsym Control+Shift+right move right
+
+
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1st Window
+    bindsym $mod+2 workspace number 2nd Window
+    bindsym $mod+3 workspace number 3rd Window
+    bindsym $mod+4 workspace number 4th Window
+    bindsym $mod+5 workspace number 5th Window
+    bindsym $mod+6 workspace number 6th Window
+    bindsym $mod+7 workspace number 7th Window
+    bindsym $mod+8 workspace number 8th Window
+    bindsym $mod+9 workspace number 9th Window
+    bindsym $mod+0 workspace number 10th Window
+
+    # Move focused container to workspace
+    bindsym Control+1 move container to workspace number 1st Window
+    bindsym Control+2 move container to workspace number 2nd Window
+    bindsym Control+3 move container to workspace number 3rd Window
+    bindsym Control+4 move container to workspace number 4th Window
+    bindsym Control+5 move container to workspace number 5th Window
+    bindsym Control+6 move container to workspace number 6th Window
+    bindsym Control+7 move container to workspace number 7th Window
+    bindsym Control+8 move container to workspace number 8th Window
+    bindsym Control+9 move container to workspace number 9th Window
+    bindsym Control+0 move container to workspace number 10th Window
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+h splith
+    bindsym $mod+v splitv
+    
+    # Switch the current container between different layout styles
+    #bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+
+# Resizing containers:
+#
+
+
+mode "resize" {
+    ###################
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+
+
+
+
+bindsym $mod+r mode "resize"
+
+# Set inner/outer gaps
+smart_gaps on
+gaps inner 6
+gaps outer 6
+
+
+#------------------------------(change title bar size)-------------------------
+#default_border none
+#default_floating_border normal
+#font pango:Inconsolata 14
+#titlebar_padding 2
+#titlebar_border_thickness 0
+
+
+
+
+#-----------(window decorations)------------------------
+set $cl_high #999999
+set $cl_indi #d9d8d8
+set $cl_back #444444
+set $cl_fore #0c243b
+set $cl_urge #e69138
+
+# Colors                border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
+client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+#---------------------------------------------
+
+
+
+
