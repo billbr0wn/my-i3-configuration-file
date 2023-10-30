@@ -43,6 +43,7 @@ set $rofi rofi -show drun 'inconsolata black 18'
 #exec_always -no-startup-id "sh -c 'exec </bin/polybar>' "
 exec --no-startup-id polybar --disable-wm-check
 
+bindsym $mod+m bar mode hide ###show,toggle
 
 #---------------------------------------
 # Default wallpaper
@@ -206,6 +207,31 @@ client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 #---------------------------------------------
+
+
+# Configure 5px of space between windows and to the screen edges.
+gaps inner 3px
+
+# Configure an additional 5px of extra space to the screen edges,
+# for a total gap of 10px to the screen edges, and 5px between windows.
+gaps outer 3px
+
+
+
+bar {
+    #status_command i3status
+    hidden_state hide
+    status_command polybar
+
+}
+
+##start .sh file in the i3 folder for other programs
+exec_always ~/.config/i3/i3-autostart.sh
+
+
+
+
+
 
 
 
