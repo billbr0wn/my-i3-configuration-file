@@ -220,7 +220,8 @@ gaps outer 3px
 
 bar {
     #status_command i3status
-    hidden_state hide
+    #hidden_state hide
+    mode invisible
     status_command polybar
 
 }
