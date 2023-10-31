@@ -94,10 +94,10 @@ exec once nitrogen --restore
 # Moving around:
 #
     # Move your focus around
-    bindsym Left focus Left
-    bindsym Down focus Down
-    bindsym Up focus Up
-    bindsym Right focus Right
+    bindsym $modLeft focus Left
+    bindsym $modDown focus Down
+    bindsym $modUp focus Up
+    bindsym $modRight focus Right
 
     # Move the focused window with the same, but add Shift
     bindsym Ctrl+Left move left
@@ -121,16 +121,16 @@ exec once nitrogen --restore
     bindsym $mod+0 workspace number 10th Window
 
     # Move focused container to workspace
-    bindsym Control+1 move container to workspace number 1st Window
-    bindsym Control+2 move container to workspace number 2nd Window
-    bindsym Control+3 move container to workspace number 3rd Window
-    bindsym Control+4 move container to workspace number 4th Window
-    bindsym Control+5 move container to workspace number 5th Window
-    bindsym Control+6 move container to workspace number 6th Window
-    bindsym Control+7 move container to workspace number 7th Window
-    bindsym Control+8 move container to workspace number 8th Window
-    bindsym Control+9 move container to workspace number 9th Window
-    bindsym Control+0 move container to workspace number 10th Window
+    bindsym Ctrl+1 move container to workspace number 1st Window
+    bindsym Ctrl+2 move container to workspace number 2nd Window
+    bindsym Ctrl+3 move container to workspace number 3rd Window
+    bindsym Ctrl+4 move container to workspace number 4th Window
+    bindsym Ctrl+5 move container to workspace number 5th Window
+    bindsym Ctrl+6 move container to workspace number 6th Window
+    bindsym Ctrl+7 move container to workspace number 7th Window
+    bindsym Ctrl+8 move container to workspace number 8th Window
+    bindsym Ctrl+9 move container to workspace number 9th Window
+    bindsym Ctrl+0 move container to workspace number 10th Window
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
