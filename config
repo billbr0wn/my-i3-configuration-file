@@ -17,7 +17,7 @@
 set $mod Mod4
 
 # Font
-#font pango:inconsolata, Black 20
+##font pango:inconsolata, Black 20
 font pango:Ubuntu, Bold 18
 
 # Home row direction keys, like vim
@@ -27,9 +27,12 @@ font pango:Ubuntu, Bold 18
 #set $right l
 
 ###Your preferred terminal emulator
-set $term kitty
+set $term xfce4-terminal
+#set $term alacritty
+
 ###browser
 set $browser firefox
+
 ###file manager
 set $file-manager pcmanfm
 
@@ -91,16 +94,16 @@ exec once nitrogen --restore
 # Moving around:
 #
     # Move your focus around
-    bindsym Control+left focus left
-    bindsym Control+down focus down
-    bindsym Control+up focus up
-    bindsym Control+right focus right
+    bindsym Left focus Left
+    bindsym Down focus Down
+    bindsym Up focus Up
+    bindsym Right focus Right
 
     # Move the focused window with the same, but add Shift
-    bindsym Control+Shift+left move left
-    bindsym Control+Shift+down move down
-    bindsym Control+Shift+up move up
-    bindsym Control+Shift+right move right
+    bindsym Ctrl+Left move left
+    bindsym Ctrl+down move down
+    bindsym Ctrl+up move up
+    bindsym Ctrl+Right move right
 
 
 # Workspaces:
@@ -228,12 +231,3 @@ bar {
 
 ##start .sh file in the i3 folder for other programs
 exec_always ~/.config/i3/i3-autostart.sh
-
-
-
-
-
-
-
-
-
