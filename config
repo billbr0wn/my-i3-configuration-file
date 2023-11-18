@@ -41,7 +41,7 @@ set $file-manager pcmanfm
 # Your preferred application launcher
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-set $rofi rofi -show drun 'inconsolata black 18'
+set $rofi rofi -show drun -font 'inconsolata black 25'  -show-icons
 
 #exec_always -no-startup-id "sh -c 'exec </bin/polybar>' "
 exec --no-startup-id polybar --disable-wm-check
