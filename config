@@ -141,7 +141,7 @@ bindsym $mod+m bar mode hide ###show,toggle
 
 ####window borders
     #default_border normal|none|pixel
-    default_border normal 3px
+    #default_border normal 3px
 
 
 
@@ -203,7 +203,7 @@ gaps outer 6
 #------------------------------(change title bar size)-------------------------
 #default_border none
 #default_floating_border normal
-#font pango:Inconsolata 14
+#font pango:Inconsolata 12
 #titlebar_padding 2
 #titlebar_border_thickness 0
 
@@ -228,8 +228,8 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 # Configure 5px of space between windows and to the screen edges.
 gaps inner 3px
 
-# Configure an additional 5px of extra space to the screen edges,
-# for a total gap of 10px to the screen edges, and 5px between windows.
+# Configure an additional px of extra space to the screen edges,
+# for a total gap of 10px to the screen edges, add 5px between windows.
 gaps outer 3px
 
 
