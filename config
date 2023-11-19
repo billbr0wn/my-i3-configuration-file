@@ -139,6 +139,12 @@ bindsym $mod+m bar mode hide ###show,toggle
     title_align center 
 
 
+####window borders
+    #default_border normal|none|pixel
+    default_border normal 3px
+
+
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
