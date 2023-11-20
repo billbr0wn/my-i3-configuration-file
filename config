@@ -1,9 +1,4 @@
-# Default config for sway
-# Copy this to ~/.config/sway/config and edit it to your liking.
 
-#exec ~/python/t-gtk-28.py && sway '[app_id="~/python/t-#gtk-28.py"]' move container to workspace 3
-
-#exec swaymsg "workspace 3; python3 ~/python/t-gtk-28.py;"
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|  🐧
@@ -26,8 +21,11 @@ font pango:Ubuntu, Bold 18
 #set $up k
 #set $right l
 
-###Your preferred terminal emulator
+
+######### (set variables) ################
+
 #set $term xfce4-terminal
+#set $term alacritty
 set $term kitty
 
 ###browser
@@ -37,6 +35,8 @@ set $browser firefox
 set $file-manager pcmanfm
 
 
+
+######### (menu/bar) ################
 
 # Your preferred application launcher
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
@@ -48,17 +48,25 @@ exec --no-startup-id polybar --disable-wm-check
 
 bindsym $mod+m bar mode hide ###show,toggle
 
-#---------------------------------------
-# Default wallpaper
+##########################################
+
+
+
+######### (wallpaper) ################
+
 #exec once nitrogen --restore
-#----------------------------------------------
+
+#######################################3
+
+
+
+######### (keybindings) ################
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-### Ky bindings
 # Basics:
-#
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -92,7 +100,7 @@ bindsym $mod+m bar mode hide ###show,toggle
 
 
 # Moving around:
-#
+
     # Move your focus around
     bindsym $modLeft focus Left
     bindsym $modDown focus Down
@@ -107,7 +115,7 @@ bindsym $mod+m bar mode hide ###show,toggle
 
 
 # Workspaces:
-#
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1st Window
     bindsym $mod+2 workspace number 2nd Window
@@ -135,18 +143,23 @@ bindsym $mod+m bar mode hide ###show,toggle
     # We just use 1-10 as the default.
 
 
-####title at top of window 
+#######################################3
+
+
+
+######### (window title) ################
     title_align center 
 
 
-####window borders
+######### (window borders) ################
     #default_border normal|none|pixel
     #default_border normal 3px
 
 
 
-# Layout stuff:
-#
+######### (layout) ################
+
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -171,9 +184,9 @@ bindsym $mod+m bar mode hide ###show,toggle
     # Move focus to the parent container
     bindsym $mod+a focus parent
 
-# Resizing containers:
-#
 
+
+######### (resize) ################
 
 mode "resize" {
     ###################
@@ -186,8 +199,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-
 
 
 
@@ -225,24 +236,20 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 #---------------------------------------------
 
 
-# Configure 5px of space between windows and to the screen edges.
-gaps inner 3px
 
-# Configure an additional px of extra space to the screen edges,
-# for a total gap of 10px to the screen edges, add 5px between windows.
+######### (gaps) ################
 gaps outer 3px
 
 
-#logout
+######### (logout) ################
 bindsym $mod+Shift+e exec "i3-msg exit"
 
 
-# audio server?
+######### (audio) ################
 exec pulseaudio
 
 
-
-
+######### (bar) ################
 bar {
     #status_command i3status
     #hidden_state hide
@@ -253,3 +260,5 @@ bar {
 
 ##start .sh file in the i3 folder for other programs
 exec_always ~/.config/i3/autostart.sh
+
+
