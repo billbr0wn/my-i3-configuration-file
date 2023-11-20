@@ -189,7 +189,7 @@ exec --no-startup-id polybar --disable-wm-check
 
 ######### (window borders) ################
     #default_border normal|none|pixel
-    default_border pixel 3
+    #default_border pixel 3
 
 
 
@@ -329,20 +329,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Set inner/outer gaps
-smart_gaps on
-gaps inner 6
-gaps outer 6
-
-
-#------------------------------(change title bar size)-------------------------
-#default_border none
-#default_floating_border normal
-#font pango:Inconsolata 12
-#titlebar_padding 2
-#titlebar_border_thickness 0
-
-
 
 
 #-----------(window decorations)------------------------
@@ -362,8 +348,8 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 
 ######### (gaps) ################
-gaps outer 3px
-
+gaps outer 2px
+gaps inner 6px
 
 ######### (logout) ################
 bindsym $mod+Shift+e exec "i3-msg exit"
