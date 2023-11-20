@@ -61,7 +61,7 @@ set $rofi rofi -show drun -font 'inconsolata black 25'  -show-icons
 #exec_always -no-startup-id "sh -c 'exec </bin/polybar>' "
 exec --no-startup-id polybar --disable-wm-check
 
-bindsym $mod+m bar mode hide ###show,toggle
+#bindsym $mod+m bar mode hide ###show,toggle
 
 ##########################################
 
@@ -170,16 +170,111 @@ bindsym $mod+m bar mode hide ###show,toggle
 
 ######### (window borders) ################
     #default_border normal|none|pixel
-    #default_border normal 3px
+    default_border pixel 3
+
+
+
+
+##################(container)######################
+tiling_drag modifier
+# turn on mouse following
+focus_follows_mouse yes
+
+
+
+
+
+##################(mouse mode)######################
+
+floating_modifier Mod1
+
+mode "mouse" {
+    # set your three speeds here
+
+    set $slow 1
+    set $quick 10
+    set $fast 50
+
+    # Mouse movement (slow/fine-tuned) -- vim keybindings
+
+    bindsym h exec xdotool mousemove_relative -- -$slow 0
+    bindsym j exec xdotool mousemove_relative 0 $slow
+    bindsym k exec xdotool mousemove_relative -- 0 -$slow
+    bindsym l exec xdotool mousemove_relative $slow 0
+
+    # Mouse movement (slow/fine-tuned) -- arrow keys
+
+    bindsym Left exec xdotool mousemove_relative -- -$slow 0
+    bindsym Down exec xdotool mousemove_relative 0 $slow
+    bindsym Up exec xdotool mousemove_relative -- 0 -$slow
+    bindsym Right exec xdotool mousemove_relative $slow 0
+
+
+
+    # Mouse movement (special down-right)
+
+    bindsym m exec xdotool mousemove_relative 10 10
+
+    # Left Click
+    bindsym f exec xdotool click 1
+
+    # Middle Click
+    bindsym d exec xdotool click 2
+
+    # Right Click
+    bindsym s exec xdotool click 3
+
+    # Left Click-and-drag
+    bindsym Shift+f exec xdotool mousedown 1
+
+    # Middle Click-and-drag 
+    bindsym Shift+d exec xdotool mousedown 2
+
+    # Right Click-and-drag
+    bindsym Shift+s exec xdotool mousedown 3
+
+    # Left Drag release
+    bindsym $mod2+f exec xdotool mouseup 1
+
+    # Middle Drag release
+    bindsym $mod2+d exec xdotool mouseup 2
+
+    # Right Drag release
+    bindsym $mod2+s exec xdotool mouseup 3
+
+
+    # return to normal keybindings -- IMPORTANT!!
+
+    bindsym Escape mode "default"
+}
+
+
+#####################################################3
+
+
+
+
+
+
+
 
 
 
 ######### (layout) ################
 
 
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
+
+#    default_orientation horizontal|vertical|auto
+#    workspace_layout default|stacking|tabbed
+
+    
+    default_orientation auto
+    workspace_layout default
+
+
+######### (layout) ################
+
+
     bindsym $mod+h splith
     bindsym $mod+v splitv
     
@@ -192,6 +287,12 @@ bindsym $mod+m bar mode hide ###show,toggle
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
+#############################################
+
+
+
+######### (floating) ################
+
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
@@ -200,6 +301,9 @@ bindsym $mod+m bar mode hide ###show,toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+#################################################
+
 
 
 
