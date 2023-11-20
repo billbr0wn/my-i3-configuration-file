@@ -8,7 +8,7 @@
                           #######                 ##############
                           #######                 ##############
                           #######                         ######
-                          #######                         ######         
+                                                                                                                              
                        #############       ######         ######
                        #############       ##################### 
                        #############       ####################
@@ -208,10 +208,10 @@ focus_follows_mouse yes
 
 
 mode "mouse" {
-    # set your three speeds here
+#    # set your three speeds here
 
-    set $slow 1
-    set $quick 10
+#    set $slow 1
+#    set $quick 10
     set $fast 50
 
     # Mouse movement (slow/fine-tuned) -- vim keybindings
@@ -350,13 +350,13 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 ######### (gaps) ################
 
 # Outer gaps for all windows: space along the screen edges.
-gaps outer 5px
-gaps horizontal  3px
-gaps vertical 3px
-gaps top  3px
-gaps left 7px
-gaps bottom 5px
-gaps right 7px
+#gaps outer 5px
+#gaps horizontal  3px
+#gaps vertical 3px
+#gaps top  3px
+#gaps left 7px
+#gaps bottom 5px
+#gaps right 7px
 #gaps inner 3px
 
 ######### (logout) ################
@@ -377,6 +377,8 @@ bar {
 }
 
 ##start .sh file in the i3 folder for other programs
-exec_always ~/.config/i3/autostart.sh
-
+exec --no-startup-id picom ###--config ~/.config/picom/picom.conf -b
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id pulseaudio -D
+#exec_always ~/.config/i3/autostart.sh
 
