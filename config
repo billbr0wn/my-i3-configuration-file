@@ -1,4 +1,19 @@
 
+                          
+                       #############        #################
+                       #############       #################### 
+                       #############       ######         ######
+                          #######                         ######
+                          #######                 ##############
+                          #######                 ##############
+                          #######                 ##############
+                          #######                         ######
+                          #######                         ######         
+                       #############       ######         ######
+                       #############       ##################### 
+                       #############       ####################
+                          
+                          
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|  🐧
@@ -93,9 +108,11 @@ bindsym $mod+m bar mode hide ###show,toggle
     # mouse button for dragging.
     #floating_modifier $mod normal
 
-    # Reload the configuration file
-    #bindsym $mod+c reload
-    bindsym $mod+c restart
+
+
+################################the configuration file
+    #bindsym $mod+Alt+c reload
+    bindsym $mod+Mod1+c restart
     
 
 
