@@ -101,12 +101,31 @@ exec --no-startup-id polybar --disable-wm-check
 
 
 
+
+######### (floating windows/ with mouse) ################
+
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    #floating_modifier $mod normal
+    
+    floating_modifier Mod1
+
+#######################################################33333
+
+
+
+######### (floating) ################  
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+space floating toggle
+
+
+
+
+#################################################
 
 
 
@@ -186,7 +205,7 @@ focus_follows_mouse yes
 
 ##################(mouse mode)######################
 
-floating_modifier Mod1
+
 
 mode "mouse" {
     # set your three speeds here
@@ -288,22 +307,6 @@ mode "mouse" {
     bindsym $mod+f fullscreen
 
 #############################################
-
-
-
-######### (floating) ################
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-
-#################################################
-
 
 
 
