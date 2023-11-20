@@ -348,8 +348,16 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 
 ######### (gaps) ################
-gaps outer 2px
-gaps inner 6px
+
+# Outer gaps for all windows: space along the screen edges.
+gaps outer 5px
+gaps horizontal  3px
+gaps vertical 3px
+gaps top  3px
+gaps left 7px
+gaps bottom 5px
+gaps right 7px
+#gaps inner 3px
 
 ######### (logout) ################
 bindsym $mod+Shift+e exec "i3-msg exit"
