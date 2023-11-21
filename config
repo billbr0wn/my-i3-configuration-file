@@ -90,14 +90,14 @@ exec --no-startup-id polybar --disable-wm-check
 
     # Start your launcher
     bindsym $mod+d exec $rofi
+    bindsym Ctrl+Space exec $rofi
 
     ###bindsym Control+Space
-    ###bindsym $mod+m exec $menu
     # start browser
     bindsym $mod+b exec $browser
     
     # start file-manager
-    bindsym $mod+p exec $file-manager
+    bindsym $mod+m exec $file-manager
 
 
 
@@ -117,11 +117,11 @@ exec --no-startup-id polybar --disable-wm-check
 
 
 
-######### (floating) ################  
+######### ( floating tiling ) ################  
 
     # Toggle the current focus between tiling and floating mode
+    ##hit again to switch back
     bindsym $mod+space floating toggle
-
 
 
 
@@ -201,11 +201,7 @@ focus_follows_mouse yes
 
 
 
-
-
 ##################(mouse mode)######################
-
-
 
 mode "mouse" {
 #    # set your three speeds here
@@ -275,10 +271,6 @@ mode "mouse" {
 
 
 
-
-
-
-
 ######### (layout) ################
 
 
@@ -299,6 +291,7 @@ mode "mouse" {
     
     # Switch the current container between different layout styles
     #bindsym $mod+s layout stacking
+    
     
     bindsym $mod+w layout tabbed
     bindsym $mod+s layout default
