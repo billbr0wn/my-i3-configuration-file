@@ -276,7 +276,7 @@ mode "mouse" {
 
     
     default_orientation auto
-    workspace_layout default
+    workspace_layout tabbed
 
 
 ######### (layout) ################
