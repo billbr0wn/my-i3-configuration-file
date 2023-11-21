@@ -363,9 +363,6 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 bindsym $mod+Shift+e exec "i3-msg exit"
 
 
-######### (audio) ################
-exec pulseaudio
-
 
 ######### (bar) ################
 bar {
@@ -379,6 +376,4 @@ bar {
 ##start .sh file in the i3 folder for other programs
 exec --no-startup-id picom ###--config ~/.config/picom/picom.conf -b
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id pulseaudio -D
-#exec_always ~/.config/i3/autostart.sh
 
