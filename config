@@ -1,4 +1,4 @@
-
+\
                           
                        #############        #################
                        #############       #################### 
@@ -49,6 +49,9 @@ set $browser firefox
 ###file manager
 set $file-manager pcmanfm
 
+
+
+exec --no-startup-id xset -s off -dpms
 
 
 ######### (menu/bar) ################
@@ -282,8 +285,10 @@ mode "mouse" {
 ######### (layout) ################
 
 
-    bindsym $mod+h splith
-    bindsym $mod+v splitv
+    bindsym $mod+v layout splitv
+    bindsym $mod+h layout splith
+    
+    
     
     # Switch the current container between different layout styles
     #bindsym $mod+s layout stacking
